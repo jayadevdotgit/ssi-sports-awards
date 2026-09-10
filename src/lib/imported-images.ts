@@ -61,6 +61,18 @@ export const personImages: Record<string, string> = {
   "Pritveen Rajan": `${base}/Whats-App-Image-2025-08-24-at-12-53-55-AM.jpg`,
   "Dr. Sarthak Patnaik": `${base}/Whats-App-Image-2025-07-04-at-11-29-11-579ed221-2-745x1024.jpg`,
   "Sarthak Patnaik": `${base}/Whats-App-Image-2025-07-04-at-11-29-11-579ed221-2-745x1024.jpg`,
+  "Mr. Soumya Patnaik": `${base}/1-768x1024.jpg`,
+  "Soumya Patnaik": `${base}/1-768x1024.jpg`,
+  "Dr. Nisha Kaushik": `${base}/4-768x1024.jpg`,
+  "Nisha Kaushik": `${base}/4-768x1024.jpg`,
+  "Dr. Monika Ray Patnaik": `${base}/2-768x1024.jpg`,
+  "Monika Ray Patnaik": `${base}/2-768x1024.jpg`,
+  "Leepika Patnaik": `${base}/Untitled-design-27-1024x683.jpg`,
+  "Akul Nayak": `${base}/Untitled-design-29-1024x683.jpg`,
+  "Shri Kanak Vardhan Singh Deo": `${base}/IMG-2138.jpg`,
+  "Kanak Vardhan Singh Deo": `${base}/IMG-2138.jpg`,
+  "Shri Akash Das Nayak": `${base}/IMG-2287.jpg`,
+  "Akash Das Nayak": `${base}/IMG-2287.jpg`,
 };
 
 export const brandLogo = `${base}/Whats-App-Image-2025-07-08-at-16-56-45-28b2319b.jpg`;
