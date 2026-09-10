@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# SSI Sports Awards
 
-## Getting Started
+A responsive Next.js page based on the supplied black, gold, and orange SSI Sports Awards reference. The original event photographs and logo remain in `public/images/`.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:4001. Both development and production start scripts use port 4001. On Windows PowerShell, use `npm.cmd` if the execution policy blocks `npm.ps1`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+npm start
+```
 
-## Learn More
+The site includes responsive navigation, a dedicated `/gallery` page with category filters, a keyboard-accessible photo viewer, and original-image downloads. The nomination flow validates details, provides a review step, saves drafts on the device when requested, and downloads a text file. No nomination submission service is connected and no form data is sent to a server.
 
-To learn more about Next.js, take a look at the following resources:
+With the app running on port 4001 and Google Chrome installed, run `npm run test:e2e` for desktop and mobile interaction checks. Screenshots are written to `artifacts/website-desktop.png` and `artifacts/website-mobile.png`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The Bebas Neue and Manrope fonts are served locally; their licenses are in `public/fonts`. The decorative stage background was generated with the built-in image generation tool; its prompt and provenance are recorded in `artifacts/stage-background.md`. Original event photographs were not altered.

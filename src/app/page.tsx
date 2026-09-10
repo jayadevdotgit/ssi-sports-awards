@@ -1,69 +1,56 @@
 import Image from "next/image";
+import Link from "next/link";
+import { AboutButton, GalleryPhoto, NominateButton } from "./components";
+import { Arrow } from "./icons";
+import { Closing } from "./site-shell";
+
+function LightRibbons() {
+  return <svg className="hero-ribbons" viewBox="0 0 1100 540" fill="none" preserveAspectRatio="none" aria-hidden="true">
+    <defs><filter id="ribbon-glow" x="-20%" y="-100%" width="140%" height="300%"><feGaussianBlur stdDeviation="5" /></filter><linearGradient id="ribbon-color"><stop stopColor="#c06a12" stopOpacity="0" /><stop offset=".35" stopColor="#ffae28" /><stop offset=".65" stopColor="#fff8d5" /><stop offset="1" stopColor="#ff8a0d" /></linearGradient></defs>
+    <g stroke="url(#ribbon-color)"><path className="ribbon-halo" d="M430 127C368 16 845 73 1002 5M923 166C1199 234 1038 329 459 420S297 480 1130 516" strokeWidth="10" filter="url(#ribbon-glow)" /><path d="M430 127C368 16 845 73 1002 5M923 166C1199 234 1038 329 459 420S297 480 1130 516" strokeWidth="2.5" /><path d="M437 129C375 24 845 82 1004 10M930 169C1199 247 1031 337 459 425S301 484 1130 521" strokeWidth="1" /></g>
+  </svg>;
+}
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <main id="main" className="home-page">
+    <section className="hero" aria-labelledby="hero-title">
+      <div className="hero-copy">
+        <h1 id="hero-title"><span>Every champion</span><span>has a journey.</span></h1>
+        <p className="hero-subtitle">SSI SPORTS AWARDS</p>
+        <p className="hero-description">Celebrating athletes, changemakers<br className="desktop-break" /> and the spirit of a stronger India.</p>
+        <div className="hero-actions"><a className="button button-orange" href="#awardees">Explore the awards <Arrow /></a><NominateButton outline /></div>
+        <p className="hero-values">PEOPLE <i /> PURPOSE <i /> PROGRESS</p>
+      </div>
+      <div className="hero-visual">
+        <div className="emblem-display" aria-hidden="true"><div className="award-emblem"><Image src="/images/ssi-logo.jpg" alt="" width={300} height={300} /></div><div className="pedestal pedestal-top" /><div className="pedestal pedestal-bottom" /></div>
+        <GalleryPhoto index={0} className="hero-photo" preload />
+      </div>
+      <p className="side-note hero-side">SPORTS<br />BUILDS A<br />BRIGHTER<br />INDIA<span /></p>
+      <p className="handwritten">More<br />Than<br />A Game</p>
+      <LightRibbons />
+      <p className="side-note hero-bottom">INDIAN SPORTS.<br />BRIGHTER TOMORROWS.<span /></p>
+      <span className="star-flare hero-star" aria-hidden="true" />
+      <div className="section-arc hero-arc" aria-hidden="true" />
+    </section>
+
+    <section className="moments" id="awardees" aria-labelledby="moments-title">
+      <div className="section-heading"><p className="eyebrow">REAL PEOPLE. REAL IMPACT.</p><h2 id="moments-title">Moments of glory.</h2><p className="section-subtitle"><span />TOGETHER FOR A STRONGER SPORTING INDIA.<span /></p></div>
+      <div className="group-stage"><div className="group-photo-wrap"><GalleryPhoto index={1} className="group-photo" /><span className="photo-reflection" aria-hidden="true" /></div><p className="side-note">DIVERSE<br />PEOPLE.<br />A STRONGER<br />INDIA.<span /></p></div>
+      <Link className="gallery-invitation text-link" href="/gallery">Explore the 2025 gallery <span className="photo-count">03 MOMENTS</span><Arrow /></Link>
+      <span className="star-flare group-star" aria-hidden="true" />
+    </section>
+
+    <section className="about" id="about" aria-labelledby="about-title">
+      <p className="side-note about-side">LEADERSHIP<br />FUELS<br />POSSIBILITIES.<span /></p>
+      <GalleryPhoto index={2} className="speaker-photo" />
+      <div className="about-copy"><p className="eyebrow">VISION FOR A STRONGER TOMORROW</p><h2 id="about-title">Celebrating sport.<br />Inspiring India.</h2><p>The SSI Sports Awards honour exceptional athletes, dedicated coaches, institutions and changemakers who are shaping a healthier, stronger and more united India through sport.</p><AboutButton /></div>
+      <div className="impact" aria-label="The possibilities that sport creates">{[
+        { icon: "opportunities", first: "MORE", second: "OPPORTUNITIES" },
+        { icon: "communities", first: "STRONGER", second: "COMMUNITIES" },
+        { icon: "trophy", first: "BRIGHTER", second: "TOMORROWS" },
+      ].map((item) => <div key={item.icon}><Image src={`/illustrations/${item.icon}.svg`} alt="" width={38} height={38} /><span>{item.first}<br />{item.second}</span></div>)}</div>
+      <div className="section-arc about-arc" aria-hidden="true" />
+    </section>
+    <Closing />
+  </main>;
 }
