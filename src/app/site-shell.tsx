@@ -52,5 +52,6 @@ export function Footer() {
     <div className="footer-top"><Link href="/">SSI SPORTS AWARDS 2025</Link><span className="footer-rule" /><p>CELEBRATING EXCELLENCE IN INDIAN SPORTS</p><p className="footer-values">PEOPLE <i /> SPORT <i /> A STRONGER INDIA</p></div>
     <nav className="footer-links" aria-label="Footer navigation">{footerLinks.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}</nav>
     <div className="footer-bottom"><p>A celebration of the people who move Indian sport forward.</p><div><Link href="/gallery">Event gallery</Link><a href="#top">Back to top <Arrow direction="up" /></a></div></div>
+    <p className="footer-credit">Designed by <a href="mailto:jayadevpradhan9@gmail.com">Jayadev</a></p>
   </footer>;
 }

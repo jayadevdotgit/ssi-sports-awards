@@ -1,4 +1,4 @@
-export type Person = { name: string; role: string; bio: string[] };
+export type Person = { name: string; role: string; bio: string[]; image?: string };
 export type AwardeeGroup = { title: string; entries: Person[] };
 export type AwardeeEdition = {
   year: number;
@@ -78,6 +78,7 @@ export const awardees2024: AwardeeEdition = {
         {
           name: "Animesh Kujur",
           role: "Odisha's Sprint Sensation",
+          image: "/images/imported/ANIMESH.jpg",
           bio: [
             "Animesh Kujur, a 21-year-old sprinter from Odisha, has quickly risen to national prominence in Indian athletics.",
             "Originally a footballer, he shifted to sprinting during the COVID-19 lockdown. In just two and a half years, Animesh became the second-fastest Indian in the 200m event, recently breaking his own record with a time of 20.65 seconds.",
@@ -86,6 +87,7 @@ export const awardees2024: AwardeeEdition = {
         {
           name: "Lalu Prasad Bhoi",
           role: "Rising Sprint Star",
+          image: "/images/imported/LALU.jpg",
           bio: [
             "Lalu Prasad Bhoi, a 21-year-old sprinter from Lanjigarh, Kalahandi in Odisha, is a rising star in Indian athletics.",
             "A commerce student at KISS University, he trains at the Odisha–Reliance Foundation High-Performance Centre. He gained national attention by winning the 100m at the 2024 National Open Athletics Championship with a time of 10.46 seconds.",
@@ -94,6 +96,7 @@ export const awardees2024: AwardeeEdition = {
         {
           name: "Nithya Gandhe",
           role: "India's Fastest Woman",
+          image: "/images/imported/nithya-gande.jpg",
           bio: [
             "Nithya Gandhe, a 24-year-old sprinter from Telangana, has emerged as one of India's top female athletes.",
             "She won gold in the 100m (11.41s) and bronze in the 200m at the Indian Grand Prix-3 in Bengaluru. At the 2024 National Open Athletics Championship, she was crowned the fastest woman with a winning time of 11.57 seconds in the 100m.",
@@ -107,6 +110,7 @@ export const awardees2024: AwardeeEdition = {
         {
           name: "Abdul Hakim Giri",
           role: "Ice Hockey Pioneer",
+          image: "/images/imported/ABDUL-HAKIM.jpg",
           bio: [
             "Abdul Hakim Giri, born on September 2, 1977, in Ladakh, is the head coach of the Indian Women's Ice Hockey Team and a key figure in the sport's development in India.",
             "A former ice hockey player himself, he later trained abroad to become a certified referee and dedicated coach. He led the Indian women's team to their first-ever international competition in Chinese Taipei, marking a historic milestone.",
@@ -136,6 +140,7 @@ export const awardees2024: AwardeeEdition = {
         {
           name: "Indian Men's Hockey Team",
           role: "National Pride",
+          image: "/images/imported/INDIAN-HOCKEY.jpg",
           bio: [
             "The Indian Men's Hockey Team, currently ranked 5th in the FIH world rankings, continues to be a dominant force in international hockey.",
             "Led by captain Harmanpreet Singh, the team has shown resilience despite challenges. With a strong mix of experienced players and emerging talents, India aims to reclaim its past glory and strengthen its position on the global stage.",
@@ -144,6 +149,7 @@ export const awardees2024: AwardeeEdition = {
         {
           name: "Karnam Malleswari",
           role: "Olympic Weightlifting Icon",
+          image: "/images/imported/K-MALLESWARI.jpg",
           bio: [
             "Karnam Malleswari is a former Indian weightlifter and a trailblazer in Indian sports history.",
             "She became the first Indian woman to win an Olympic medal, securing a bronze in the 69 kg category at the 2000 Sydney Olympics. Her remarkable achievements earned her the prestigious Arjuna Award in 1994 and the Padma Shri in 1999.",
@@ -242,6 +248,7 @@ export const awardees2023: AwardeeEdition = {
         {
           name: "Dilip Tirkey",
           role: "Indian Hockey Icon",
+          image: "/images/imported/dilip-1024x853-1.jpg",
           bio: [
             "Dilip Tirkey, born on November 25, 1977, in Sundargarh, Odisha, is a legendary Indian field hockey player and the current President of Hockey India.",
             "Renowned for his rock-solid defense and often called \"The Wall\", he holds the record for the most international appearances by an Indian with 412 caps. A three-time Olympian, he captained India at major tournaments.",

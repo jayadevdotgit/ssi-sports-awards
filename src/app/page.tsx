@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { AboutButton, NominateButton } from "./components";
+import Link from "next/link";
+import { AboutButton } from "./components";
 import { SectionHeading } from "./inner";
 import { Arrow } from "./icons";
 import { Closing } from "./site-shell";
@@ -26,7 +27,7 @@ export default function Home() {
         <p className="cinematic-lead">SSI SPORTS AWARDS</p>
         <p className="cinematic-description">Celebrating athletes, changemakers<br />and the spirit of a stronger India.</p>
         <p className="hero-event"><span>6 December 2025</span><i aria-hidden="true" /><span>Kalinga Stadium, Bhubaneswar</span></p>
-        <div className="hero-actions"><a className="button button-champagne" href="#awards">Explore the awards <Arrow /></a><NominateButton outline /></div>
+        <div className="hero-actions"><a className="button button-champagne" href="#awards">Explore the awards <Arrow /></a><Link className="button button-outline" href="/nomination-form">Nominate an athlete</Link></div>
         <p className="reference-values">PEOPLE <span>|</span> PURPOSE <span>|</span> PROGRESS</p>
       </div>
       <div className="celebration-stage"><EventCarousel />

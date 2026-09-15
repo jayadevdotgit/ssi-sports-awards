@@ -37,7 +37,7 @@ test("gallery supports navigation, filtering, and original downloads", async ({ 
 
 test("nomination validates, saves, reviews and downloads without submitting", async ({ page }) => {
   await page.goto("/");
-  await page.locator(".hero-actions").getByRole("button", { name: "Nominate an athlete" }).click();
+  await page.locator(".closing").getByRole("button", { name: "Nominate an athlete" }).click();
   const dialog = page.getByRole("dialog", { name: "Prepare an athlete nomination" });
   await dialog.getByRole("button", { name: "Review draft" }).click();
   await expect(dialog.getByText("Enter the athlete's name.", { exact: true })).toBeVisible();
@@ -49,7 +49,7 @@ test("nomination validates, saves, reviews and downloads without submitting", as
   await dialog.getByRole("button", { name: "Save for later" }).click();
   await expect(dialog.getByRole("status")).toContainText("Draft saved");
   await dialog.getByRole("button", { name: "Close nomination form" }).click();
-  await page.locator(".hero-actions").getByRole("button", { name: "Nominate an athlete" }).click();
+  await page.locator(".closing").getByRole("button", { name: "Nominate an athlete" }).click();
   await expect(dialog.getByLabel("Athlete's name *", { exact: true })).toHaveValue("Test Athlete");
   await dialog.getByRole("button", { name: "Review draft" }).click();
   await expect(dialog.locator(".nomination-review")).toContainText("Test Athlete");

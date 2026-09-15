@@ -35,10 +35,10 @@ export function SectionHeading({ eyebrow, title, intro, center = false }: {
   </div>;
 }
 
-export function EntryCard({ entry }: { entry: Person }) {
-  const image = personImages[entry.name];
+export function EntryCard({ entry, containImage = false }: { entry: Person; containImage?: boolean }) {
+  const image = entry.image ?? personImages[entry.name];
   return <article className="entry-card">
-    {image && <div className="entry-card-image"><Image src={image} alt={entry.name} width={640} height={480} sizes="(max-width: 700px) 88vw, (max-width: 1100px) 43vw, 380px" /></div>}
+    {image && <div className={`entry-card-image${containImage ? " is-contain" : ""}`}><Image src={image} alt={entry.name} width={640} height={480} sizes="(max-width: 700px) 88vw, (max-width: 1100px) 43vw, 380px" /></div>}
     <p className="eyebrow">{entry.role}</p>
     <h3>{entry.name}</h3>
     {entry.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
@@ -61,7 +61,7 @@ export function PersonCard({ name, role, bio }: { name: string; role: string; bi
   </article>;
 }
 
-export function AwardeeEditionContent({ edition }: { edition: AwardeeEdition }) {
+export function AwardeeEditionContent({ edition, containImages = false }: { edition: AwardeeEdition; containImages?: boolean }) {
   return <>
     <PageHero
       eyebrow={`SSI SPORTS AWARDS · ${edition.year}`}
@@ -72,7 +72,7 @@ export function AwardeeEditionContent({ edition }: { edition: AwardeeEdition }) 
     />
     {edition.groups.map((group) => <section className="page-section" key={group.title}>
       <SectionHeading eyebrow={edition.tagline} title={group.title} />
-      <div className="entry-grid">{group.entries.map((entry) => <EntryCard key={entry.name} entry={entry} />)}</div>
+      <div className="entry-grid">{group.entries.map((entry) => <EntryCard key={entry.name} entry={entry} containImage={containImages} />)}</div>
     </section>)}
     <section className="page-section alt">
       <blockquote className="quote-block"><p>{edition.quote}</p></blockquote>

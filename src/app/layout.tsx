@@ -16,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en" className={`${display.variable} ${body.variable}`}><body id="top"><SiteExperience><a className="skip-link" href="#main">Skip to content</a><div className="site-shell"><Header />{children}<Footer /><WhatsAppButton /></div></SiteExperience></body></html>;
+  return <html lang="en" data-scroll-behavior="smooth" className={`${display.variable} ${body.variable}`}><body id="top"><SiteExperience><a className="skip-link" href="#main">Skip to content</a><div className="site-shell"><Header />{children}<Footer /><WhatsAppButton /></div></SiteExperience></body></html>;
 }

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Awardee2024Page() {
   return <main id="main" className="inner-page">
-    <AwardeeEditionContent edition={awardees2024} />
+    <AwardeeEditionContent edition={awardees2024} containImages />
     <Closing />
   </main>;
 }
