@@ -522,7 +522,7 @@ textarea { resize: vertical; line-height: 1.7; }
 .button-champagne:hover { background: #f3dfb5; box-shadow: 0 5px 28px #d6b67925; }
 .cinematic-copy .button-outline { border-color: #746546; background: #10110e5c; color: #e3d4b6; }
 .trophy-experience { position: absolute; right: 0; top: 70px; bottom: 73px; width: 59%; }
-.trophy-canvas { position: absolute; inset: 0; opacity: 0; transition: opacity 1s; cursor: grab; touch-action: pan-y; outline-offset: -20px; }
+.trophy-canvas { position: absolute; inset: 0; opacity: 0; transition: opacity .25s; cursor: grab; touch-action: pan-y; outline-offset: -20px; }
 .trophy-canvas:focus-visible { outline: 1px solid #b69961; }
 .trophy-canvas canvas { width: 100%; height: 100%; display: block; }
 .trophy-ready .trophy-canvas { opacity: 1; }
@@ -1064,58 +1064,6 @@ main :is(.entry-card, .person-card, .hof-item, .media-card, .gallery-card, .gall
 @media (max-width: 700px) {
   .aligned-person-grid .person-card { grid-template-columns: 112px minmax(0, 1fr); }
   .aligned-person-grid .person-card-photo { width: 112px; height: 112px; }
-}
-
-/* Premium opening: restrained champagne accents and softer lighting. */
-.reference-hero {
-  background-color: #080907;
-  background-image: radial-gradient(ellipse at 72% 32%, #b68b3420, transparent 54%), linear-gradient(90deg, #08090780, transparent 58%);
-}
-.site-shell:has(.reference-hero) > .site-header {
-  background: linear-gradient(180deg, #080907f5, #080907c9);
-  border-bottom-color: #d5b77124;
-  backdrop-filter: blur(18px);
-}
-.reference-hero .cinematic-copy h1 {
-  transform: none;
-  color: #fff9ed;
-  letter-spacing: -.025em;
-  line-height: 1.04;
-  text-shadow: 0 4px 28px #0006;
-}
-.reference-hero .cinematic-copy h1 span {
-  color: #e6c77e;
-  background: linear-gradient(110deg, #f7e7bc 10%, #d6b26b 65%, #f9eccc);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.reference-hero .cinematic-lead { color: #dcc18b; letter-spacing: .24em; font-weight: 400; }
-.reference-hero .cinematic-description { color: #c5c2b9; line-height: 1.6; }
-.reference-hero .hero-logo-frame { padding: 2px; box-shadow: 0 0 0 5px #d8bc7510, 0 8px 22px #0006; }
-.reference-hero .hero-logo-label { color: #bca879; font-weight: 400; }
-.reference-hero .hero-event { color: #c8b384; font-size: min(1vw, 1.65cqh); line-height: 1.8; letter-spacing: .15em; }
-.reference-hero .button-champagne,
-.site-shell:has(.reference-hero) .site-header .nav-nominate {
-  background: linear-gradient(110deg, #ecd6a1, #cda457 70%, #ead39b);
-  color: #1b160b;
-  border: 1px solid #f5dfac;
-  box-shadow: 0 5px 24px #c99f4926, inset 0 1px 0 #fff8;
-}
-.reference-hero .button-champagne:hover,
-.site-shell:has(.reference-hero) .site-header .nav-nominate:hover {
-  background: linear-gradient(110deg, #fff0c9, #dfbd79);
-  box-shadow: 0 7px 30px #d5ad4940;
-}
-.reference-hero .hero-actions .button-outline { background: #12120f80; border-color: #baa16a80; color: #e8d7b4; }
-.reference-hero .reference-light-trails { opacity: .5; }
-.reference-hero .event-carousel-frame { filter: drop-shadow(0 18px 30px #0008); }
-.reference-hero .event-carousel-controls { padding: 8px 12px; border: 1px solid #d9b86b26; background: #0a0a08c9; border-radius: 24px; backdrop-filter: blur(12px); }
-.reference-hero .event-carousel-controls button { border-color: #d5b77155; color: #e6d2a5; }
-.reference-hero .reference-values { color: #afa68f; letter-spacing: .25em; }
-@media (max-width: 700px) {
-  .reference-hero .hero-event { font-size: min(2.6vw, 1.4cqh); letter-spacing: .1em; }
-  .reference-hero .cinematic-description { line-height: 1.4; }
-  .reference-hero .event-carousel-controls { padding: 4px 7px; }
 }
 
 /* Retain the original orange calls to action. */

@@ -5,7 +5,7 @@ import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "low-power" });
   renderer.debug.checkShaderErrors = false;
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.7));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
   renderer.setClearColor(0x000000, 0);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.2;
@@ -18,7 +18,7 @@ export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
   camera.lookAt(0, 2.6, 0);
   const pmrem = new THREE.PMREMGenerator(renderer);
   const room = new RoomEnvironment();
-  const environment = pmrem.fromScene(room, 0.025);
+  const environment = pmrem.fromScene(room, 0, 0.1, 100, { size: 128 });
   scene.environment = environment.texture;
   room.dispose();
 
@@ -46,7 +46,7 @@ export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
     return object;
   }
   function beveledBlock(width: number, height: number, depth: number, taper = 1) {
-    const geometry = new RoundedBoxGeometry(width, height, depth, 5, 0.045);
+    const geometry = new RoundedBoxGeometry(width, height, depth, 3, 0.045);
     const positions = geometry.getAttribute("position");
     for (let i = 0; i < positions.count; i++) {
       const scale = 1 - (1 - taper) * (positions.getY(i) / height + 0.5);
@@ -65,7 +65,7 @@ export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
     const vertices: number[] = [];
     const indices: number[] = [];
     const uvs: number[] = [];
-    const segments = 160, sides = 16;
+    const segments = 96, sides = 12;
     for (let i = 0; i <= segments; i++) {
       const t = i / segments;
       const angle = ribbon * Math.PI * 2 / 3 + t * Math.PI * 0.88;
@@ -93,10 +93,25 @@ export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
     geometry.computeVertexNormals();
     mesh(geometry, gold, 0);
   }
-  mesh(new THREE.SphereGeometry(0.44, 48, 32), gold, 4.22);
+  mesh(new THREE.SphereGeometry(0.44, 32, 24), gold, 4.22);
 
   let labelTexture: THREE.Texture | undefined;
-  const labelMaterial = new THREE.MeshBasicMaterial({ toneMapped: false });
+  const labelCanvas = document.createElement("canvas");
+  labelCanvas.width = labelCanvas.height = 256;
+  const labelContext = labelCanvas.getContext("2d");
+  if (labelContext) {
+    labelContext.fillStyle = "#080808";
+    labelContext.fillRect(0, 0, 256, 256);
+    labelContext.fillStyle = "#d6a653";
+    labelContext.textAlign = "center";
+    labelContext.font = "bold 78px sans-serif";
+    labelContext.fillText("SSI", 128, 128);
+    labelContext.font = "18px sans-serif";
+    labelContext.fillText("SPORTS AWARDS", 128, 163);
+  }
+  labelTexture = new THREE.CanvasTexture(labelCanvas);
+  labelTexture.colorSpace = THREE.SRGBColorSpace;
+  const labelMaterial = new THREE.MeshBasicMaterial({ map: labelTexture, toneMapped: false });
   // Each plaque faces outward and follows the taper of its side of the base.
   for (let side = 0; side < 4; side++) {
     const face = new THREE.Group();
@@ -108,7 +123,7 @@ export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
     label.rotation.x = -Math.atan(halfDepth * 0.27 / 1.14);
   }
 
-  const rockGeometry = new THREE.IcosahedronGeometry(1.85, 4);
+  const rockGeometry = new THREE.IcosahedronGeometry(1.85, 3);
   const rockPositions = rockGeometry.getAttribute("position");
   for (let i = 0; i < rockPositions.count; i++) {
     const x = rockPositions.getX(i), y = rockPositions.getY(i), z = rockPositions.getZ(i);
@@ -119,7 +134,7 @@ export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
   const rock = mesh(rockGeometry, stone, -0.18, scene);
   rock.scale.set(1.22, 0.18, 0.92);
   rock.rotation.y = 0.18;
-  const ring = mesh(new THREE.TorusGeometry(2.45, 0.008, 6, 150), gold, -0.13, scene);
+  const ring = mesh(new THREE.TorusGeometry(2.45, 0.008, 6, 96), gold, -0.13, scene);
   ring.rotation.x = Math.PI / 2;
   const glow = new THREE.PointLight(0xffba63, 12, 9);
   glow.position.set(-2, 4, 3); scene.add(glow);
@@ -201,17 +216,18 @@ export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
   host.addEventListener("pointerdown", pointerDown); host.addEventListener("pointerup", resetPointer); host.addEventListener("pointercancel", resetPointer);
   renderer.domElement.addEventListener("webglcontextlost", lost);
   resize(); frame = requestAnimationFrame(render);
-  const ready = new THREE.TextureLoader().loadAsync("/images/ssi-logo.jpg").then(async (texture) => {
-    if (disposed) { texture.dispose(); throw new Error("Trophy scene was disposed while loading"); }
+  // The first frame is already rendered. A logo download must not hide the trophy.
+  const ready = Promise.resolve();
+  void new THREE.TextureLoader().loadAsync("/images/ssi-logo.jpg").then((texture) => {
+    if (disposed) { texture.dispose(); return; }
+    labelTexture?.dispose();
     labelTexture = texture;
     texture.colorSpace = THREE.SRGBColorSpace;
     texture.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
     labelMaterial.map = texture;
     labelMaterial.needsUpdate = true;
-    await renderer.compileAsync(scene, camera);
-    if (disposed) throw new Error("Trophy scene was disposed while compiling");
     renderer.render(scene, camera); dirty = true;
-  });
+  }).catch(() => { /* Keep the local SSI plaque if the image is unavailable. */ });
   return {
     ready,
     setPaused(value: boolean) { paused = value; dirty = true; },
