@@ -17,7 +17,7 @@ export default function JuryPage() {
     />
     <section className="page-section">
       <SectionHeading eyebrow="MEET THE JURY PANEL" title="Experience you can trust." />
-      <div className="person-grid">
+      <div className="person-grid aligned-person-grid">
         {juryMembers.map((member) => <PersonCard key={member.name} name={member.name} role={member.role} bio={member.bio} />)}
       </div>
     </section>

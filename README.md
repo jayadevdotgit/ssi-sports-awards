@@ -24,3 +24,5 @@ The site includes responsive navigation, a dedicated `/gallery` page with catego
 With the app running on port 4001 and Google Chrome installed, run `npm run test:e2e` for desktop and mobile interaction checks. Screenshots are written to `artifacts/website-desktop.png` and `artifacts/website-mobile.png`.
 
 The Bebas Neue and Manrope fonts are served locally; their licenses are in `public/fonts`. The decorative stage background was generated with the built-in image generation tool; its prompt and provenance are recorded in `artifacts/stage-background.md`. Original event photographs were not altered.
+
+The homepage hero includes a procedural Three.js trophy with gold reflections, automatic rotation, pointer/touch and keyboard controls, and pause/resume. Reduced-motion preferences are respected, and a static image is available if WebGL fails. Implementation and fallback-artwork details are in `artifacts/trophy-hero-notes.md`. The trophy tests cover animation, pause, keyboard control, reduced motion, and WebGL fallback on desktop and mobile.

@@ -18,7 +18,7 @@ export default function BoardMemberPage() {
 
     <section className="page-section">
       <SectionHeading eyebrow="OUR VISION" title="Guided by purpose." intro="At SSI Sports Awards, we believe in the transformative power of sports. Our team works tirelessly to celebrate athletic achievement, foster sportsmanship, and create opportunities for athletes at all levels to shine." />
-      <div className="person-grid">
+      <div className="person-grid aligned-person-grid">
         {teamMembers.map((member) => <PersonCard key={member.name} name={member.name} role={member.role} />)}
       </div>
     </section>

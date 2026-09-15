@@ -57,26 +57,32 @@ export function SiteExperience({ children }: { children: ReactNode }) {
 const moreLinks = [
   { href: "/testimonials", label: "Testimonials" },
   { href: "/presenting-sponsor", label: "Presenting Sponsor" },
-  { href: "/ssi-team", label: "SSI Team" },
   { href: "/jury", label: "Jury" },
-  { href: "/board-member", label: "Board Member" },
-  { href: "/nomination-form", label: "Nomination Form" },
+  { href: "/board-member", label: "Board Members" },
   { href: "/media-coverage", label: "Media Coverage" },
 ];
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
+  const [awardeesOpen, setAwardeesOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
-  const { openNomination } = useExperience();
-  function close() { setOpen(false); setMoreOpen(false); }
+  function close() { setOpen(false); setAwardeesOpen(false); setMoreOpen(false); }
   return <div className="navigation-wrap" onKeyDown={(event) => { if (event.key === "Escape") { close(); toggle.current?.focus(); } }}>
     <button ref={toggle} className="menu-toggle" aria-expanded={open} aria-controls="navigation" aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen(!open)}><span>{open ? "Close" : "Menu"}</span><span className={open ? "menu-lines is-open" : "menu-lines"} aria-hidden="true"><i /><i /></span></button>
     <nav className={open ? "navigation open" : "navigation"} id="navigation" aria-label="Main navigation">
       <Link href="/about" aria-current={pathname === "/about" ? "page" : undefined} onClick={close}>About</Link>
-      <Link href="/awardees" aria-current={pathname === "/awardees" || pathname.startsWith("/awardee-") ? "page" : undefined} onClick={close}>Awardees</Link>
+      <div className="nav-more nav-awardees">
+        <button className="nav-more-toggle" aria-expanded={awardeesOpen} aria-controls="awardees-navigation" aria-current={pathname === "/awardees" || pathname.startsWith("/awardee-") ? "page" : undefined} onClick={() => setAwardeesOpen(!awardeesOpen)}>Awardees <i aria-hidden="true" /></button>
+        {awardeesOpen && <div className="nav-more-menu" id="awardees-navigation">
+          <Link href="/awardees" aria-current={pathname === "/awardees" ? "page" : undefined} onClick={close}>All awardees</Link>
+          <Link href="/awardee-2024" aria-current={pathname === "/awardee-2024" ? "page" : undefined} onClick={close}>Awardee 2024</Link>
+          <Link href="/awardee-2023" aria-current={pathname === "/awardee-2023" ? "page" : undefined} onClick={close}>Awardee 2023</Link>
+        </div>}
+      </div>
       <Link href="/hall-of-fame" aria-current={pathname === "/hall-of-fame" ? "page" : undefined} onClick={close}>Hall of Fame</Link>
+      <Link href="/nomination-form" aria-current={pathname === "/nomination-form" ? "page" : undefined} onClick={close}>Nomination Form</Link>
       <Link href="/gallery" aria-current={pathname === "/gallery" ? "page" : undefined} onClick={close}>Gallery</Link>
       <div className="nav-more">
         <button className="nav-more-toggle" aria-expanded={moreOpen} aria-controls="more-navigation" onClick={() => setMoreOpen(!moreOpen)}>More <i aria-hidden="true" /></button>
@@ -84,7 +90,7 @@ export function Navigation() {
           {moreLinks.map((link) => <Link key={link.href} href={link.href} aria-current={pathname === link.href ? "page" : undefined} onClick={close}>{link.label}</Link>)}
         </div>}
       </div>
-      <button className="button button-orange nav-nominate" onClick={() => { close(); openNomination(); }}>Nominate an athlete <Arrow /></button>
+      <Link className="button button-orange nav-nominate" href="/nomination-form" onClick={close}>Nominate an athlete <Arrow /></Link>
     </nav>
   </div>;
 }
@@ -113,7 +119,7 @@ export function GalleryCollection() {
   const { openPhoto } = useExperience();
   const filters = ["All moments", ...eventPhotos.map((photo) => photo.category)];
   const visible = eventPhotos.map((photo, index) => ({ ...photo, index })).filter((photo) => filter === "All moments" || photo.category === filter);
-  return <><div className="gallery-filters" role="group" aria-label="Filter event photos">{filters.map((item) => <button aria-pressed={filter === item} key={item} onClick={() => setFilter(item)}>{item}</button>)}</div><p className="gallery-count" aria-live="polite">{visible.length} {visible.length === 1 ? "moment" : "moments"} from SSI Sports Awards 2025</p><div className="gallery-grid">{visible.map((photo) => <button className="gallery-card" key={photo.src} onClick={() => openPhoto(photo.index)}><div className="gallery-card-image"><Image src={photo.src} alt={photo.alt} width={640} height={427} sizes="(max-width: 700px) 88vw, 30vw" /><span className="photo-zoom"><ExpandIcon /></span></div><span className="eyebrow">{photo.category}</span><h2>{photo.title}</h2><p>{photo.description}</p><span className="text-link">View moment <Arrow /></span></button>)}</div></>;
+  return <><div className="gallery-filters" role="group" aria-label="Filter event photos">{filters.map((item) => <button aria-pressed={filter === item} key={item} onClick={() => setFilter(item)}>{item}</button>)}</div><p className="gallery-count" aria-live="polite">{visible.length} {visible.length === 1 ? "moment" : "moments"} from SSI Sports Awards 2025</p><div className="gallery-grid">{visible.map((photo) => <button className="gallery-card" key={photo.src} onClick={() => openPhoto(photo.index)}><div className="gallery-card-image"><Image src={photo.src} alt={photo.alt} width={640} height={427} sizes="(max-width: 700px) 88vw, 44vw" /><span className="photo-zoom"><ExpandIcon /></span></div><span className="eyebrow">{photo.category}</span><h2>{photo.title}</h2><p>{photo.description}</p><span className="text-link">View moment <Arrow /></span></button>)}</div></>;
 }
 
 export function NominationForm({ initialDraft }: { initialDraft: NominationDraft }) {

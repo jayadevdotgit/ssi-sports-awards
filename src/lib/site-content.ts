@@ -8,7 +8,7 @@ export type AwardeeEdition = {
   quote: string;
 };
 
-export const hallOfFame = [
+export const hallOfFame: { name: string; role: string; image?: string }[] = [
   { name: "Animesh Kujur", role: "Athlete" },
   { name: "Ankita Dhyani", role: "Athletics" },
   { name: "Ayush Shetty", role: "Badminton" },
@@ -18,7 +18,7 @@ export const hallOfFame = [
   { name: "Indian Women Ice Hockey Team", role: "Legend" },
   { name: "Jyothi Yarraji", role: "Athlete" },
   { name: "Neeraj Jha", role: "Journalist" },
-  { name: "Nithya Gandhe", role: "Athlete" },
+  { name: "Nithya Gandhe", role: "Athlete", image: "/images/nithya-gandhe-hall-of-fame.png" },
   { name: "O P Singh Karhana", role: "Thrower" },
   { name: "Rahul Banerjee", role: "Coach" },
   { name: "Ruhaan Alva", role: "4-Wheeler Racing" },
@@ -266,11 +266,11 @@ export const teamsWeServe = [
 ];
 
 export const services = [
-  { name: "Sports Medicine", detail: "Specialized care for athletes" },
-  { name: "Sports Surgery", detail: "Advanced surgical solutions" },
-  { name: "Physiotherapy", detail: "Rehabilitation & recovery" },
-  { name: "Sports Psychology", detail: "Mental conditioning" },
-  { name: "Sports Nutrition", detail: "Performance diet planning" },
+  { name: "Sports Medicine", detail: "Specialized care for athletes", icon: "medicine" },
+  { name: "Sports Surgery", detail: "Advanced surgical solutions", icon: "surgery" },
+  { name: "Physiotherapy", detail: "Rehabilitation & recovery", icon: "physio" },
+  { name: "Sports Psychology", detail: "Mental conditioning", icon: "psychology" },
+  { name: "Sports Nutrition", detail: "Performance diet planning", icon: "nutrition" },
 ];
 
 export const founders = [
@@ -324,8 +324,27 @@ export const distinguishedGuests = [
 ];
 
 export const awardeeVoices = [
-  { name: "Pranati Nayak", role: "Indian Olympic Athlete" },
-  { name: "Karnam Malleswari", role: "Indian Weightlifter" },
+  { name: "Pranati Nayak", role: "Indian Olympic Athlete", video: "/videos/awardee-pranati-nayak.mp4" },
+  { name: "Karnam Malleswari", role: "Indian Weightlifter", video: "/videos/awardee-karnam-malleswari.mp4" },
+];
+
+export const guestMessages = [
+  { name: "Shri Kanak Vardhan Singh Deo", role: "Chief Guest", detail: "Honourable Deputy Chief Minister, Odisha", caption: "Message from our Chief Guest", video: "/videos/guest-kanak-vardhan-singh-deo.mp4" },
+  { name: "Shri Dilip Kumar Tirkey", role: "Guest of Honour", detail: "Renowned Hockey Legend & Former Indian Captain", caption: "Message from our Guest of Honour", video: "/videos/guest-dilip-kumar-tirkey.mp4" },
+  { name: "Shri Probodh Mohanty", role: "Special Guest", detail: "Managing Director of SNM Group", caption: "Message from our Special Guest", video: "/videos/guest-probodh-mohanty.mp4" },
+  { name: "Shri Akash Das Nayak", role: "Special Guest", detail: "Odia Film Actor & MLA", caption: "Message from our Special Guest", video: "/videos/guest-akash-das-nayak.mp4" },
+  { name: "Dr. Sarthak Patnaik", role: "Founder & CEO", detail: "Sports Science India", caption: "Message from our Founder & CEO", video: "/videos/guest-sarthak-patnaik.mp4" },
+];
+
+export const awardShowcase = [
+  { tag: "Community", name: "Dilip Tirkey Grass Root Award", description: "Honoring contributions to grassroots sports and community development.", image: "/images/imported/ssidiliptirkygrassrootaward-1024x990-1.png" },
+  { tag: "Excellence", name: "SSI Karna Award", description: "Recognizing dedication and sportsmanship at the highest levels.", image: "/images/imported/ssikaranaaward-1024x982.png" },
+  { tag: "Legendary", name: "Milkha Singh Sprint Award", description: "Celebrating sprinting excellence inspired by the Flying Sikh.", image: "/images/imported/ssimilkhasinghaward-1024x995.png" },
+  { tag: "Achievement", name: "Female Sprint Award", description: "Honoring female sprinters who break barriers and set standards.", image: "/images/imported/ssisportsjournalismaward-300x284-1.png" },
+  { tag: "Mentorship", name: "Best Coach Award", description: "Recognizing coaches who develop athlete potential.", image: "/images/imported/ssiptushaaward-1024x973.png" },
+  { tag: "Legacy", name: "Lifetime Achievement", description: "For lifelong contributions to sports development across generations.", image: "/images/imported/ssiptushaaward-1024x973.png" },
+  { tag: "Media", name: "Sports Journalism", description: "Excellence in sports journalism and media coverage.", image: "/images/imported/ssisportsjournalismaward-300x284-1.png" },
+  { tag: "Progress", name: "Sports Development", description: "For innovation in sports infrastructure and programs.", image: "/images/imported/ssisportsjournalismaward-300x284-1.png" },
 ];
 
 export type MediaArticle = {
@@ -372,21 +391,33 @@ export const mediaVideos = [
     title: "SSI Sports Awards 2023 Highlights",
     description: "Watch the highlights from the prestigious SSI Sports Awards ceremony held at Kalinga Stadium.",
     date: "December 16, 2023",
+    id: "GNDeyv2lx-Q",
+    youtube: "https://youtu.be/GNDeyv2lx-Q",
+    embed: "https://www.youtube.com/embed/GNDeyv2lx-Q",
   },
   {
     title: "Sports Science Conclave Sessions",
     description: "Key sessions and discussions from the Sports Science Conclave featuring industry experts.",
     date: "December 17, 2023",
+    id: "SJ1hFlGHDos",
+    youtube: "https://youtu.be/SJ1hFlGHDos",
+    embed: "https://www.youtube.com/embed/SJ1hFlGHDos",
   },
   {
     title: "Award Winners Interviews",
     description: "Exclusive interviews with the winners of SSI Sports Awards 2023 and their achievements.",
     date: "December 18, 2023",
+    id: "i9taTmKbxXQ",
+    youtube: "https://youtu.be/i9taTmKbxXQ",
+    embed: "https://www.youtube.com/embed/i9taTmKbxXQ",
   },
   {
     title: "Behind the Scenes: SSI Awards",
     description: "Go behind the scenes of the SSI Sports Awards 2023 and see how the event was organized.",
     date: "December 19, 2023",
+    id: "q_Q1n9WLNoY",
+    youtube: "https://youtu.be/q_Q1n9WLNoY",
+    embed: "https://www.youtube.com/embed/q_Q1n9WLNoY",
   },
 ];
 

@@ -19,7 +19,7 @@ export default function GalleryPage() {
       <div className="section-head"><p className="eyebrow">FROM THE ARCHIVE</p><h2>More moments.</h2><p>Scenes from the ceremony, the conclave and the people who made the celebration.</p></div>
       <div className="gallery-mosaic">
         {eventMoments.map((moment) => <figure className="gallery-moment" key={moment.src}>
-          <Image src={moment.src} alt={moment.alt} width={640} height={480} sizes="(max-width: 700px) 92vw, (max-width: 900px) 45vw, 30vw" />
+          <Image src={moment.src} alt={moment.alt} width={640} height={480} sizes="(max-width: 700px) 88vw, 44vw" />
         </figure>)}
       </div>
     </section>

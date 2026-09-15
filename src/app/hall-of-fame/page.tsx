@@ -20,10 +20,10 @@ export default function HallOfFamePage() {
     <section className="page-section">
       <div className="hof-grid">
         {hallOfFame.map((item, index) => {
-          const image = personImages[item.name];
+          const image = item.image ?? personImages[item.name];
           return <article className="hof-item" key={item.name}>
             <span className="rank" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-            {image && <div className="hof-photo"><Image src={image} alt={item.name} width={72} height={72} sizes="72px" /></div>}
+            {image && <div className="hof-photo"><Image src={image} alt={item.name} width={640} height={480} sizes="(max-width: 700px) 90px, (max-width: 1100px) 28vw, 280px" /></div>}
             <div><h3>{item.name}</h3><span className="role">{item.role}</span></div>
           </article>;
         })}

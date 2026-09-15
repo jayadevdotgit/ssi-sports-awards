@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { SiteExperience } from "./components";
-import { Header, Footer } from "./site-shell";
+import { Header, Footer, WhatsAppButton } from "./site-shell";
 import "./globals.css";
 
 const display = localFont({ src: "../../public/fonts/BebasNeue-Regular.ttf", variable: "--font-display", display: "swap" });
@@ -16,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en" className={`${display.variable} ${body.variable}`}><body id="top"><SiteExperience><a className="skip-link" href="#main">Skip to content</a><div className="site-shell"><Header />{children}<Footer /></div></SiteExperience></body></html>;
+  return <html lang="en" className={`${display.variable} ${body.variable}`}><body id="top"><SiteExperience><a className="skip-link" href="#main">Skip to content</a><div className="site-shell"><Header />{children}<Footer /><WhatsAppButton /></div></SiteExperience></body></html>;
 }

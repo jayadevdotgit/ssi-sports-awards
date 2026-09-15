@@ -38,7 +38,7 @@ export function SectionHeading({ eyebrow, title, intro, center = false }: {
 export function EntryCard({ entry }: { entry: Person }) {
   const image = personImages[entry.name];
   return <article className="entry-card">
-    {image && <div className="entry-card-image"><Image src={image} alt={entry.name} width={640} height={480} sizes="(max-width: 900px) 90vw, 44vw" /></div>}
+    {image && <div className="entry-card-image"><Image src={image} alt={entry.name} width={640} height={480} sizes="(max-width: 700px) 88vw, (max-width: 1100px) 43vw, 380px" /></div>}
     <p className="eyebrow">{entry.role}</p>
     <h3>{entry.name}</h3>
     {entry.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
@@ -51,9 +51,9 @@ function initials(name: string) {
 
 export function PersonCard({ name, role, bio }: { name: string; role: string; bio?: string }) {
   const image = personImages[name];
-  return <article className="person-card">
+  return <article className="person-card" data-person={name}>
     {image
-      ? <div className="person-card-photo"><Image src={image} alt={name} width={160} height={160} sizes="160px" /></div>
+      ? <div className="person-card-photo"><Image src={image} alt={name} width={640} height={480} sizes="(max-width: 700px) 88px, (max-width: 1100px) 28vw, 280px" /></div>
       : <div className="person-card-photo person-card-initials" aria-hidden="true"><span>{initials(name)}</span></div>}
     <h3>{name}</h3>
     <p className="role">{role}</p>

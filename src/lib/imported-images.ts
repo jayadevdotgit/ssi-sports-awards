@@ -1,4 +1,5 @@
 const base = "/images/imported";
+const portraits = "/images/portraits";
 
 export const personImages: Record<string, string> = {
   "Animesh Kujur": `${base}/ANIMESH-KUJUR.jpg`,
@@ -24,8 +25,8 @@ export const personImages: Record<string, string> = {
   "Vikash Thakur": `${base}/VIKASH-THAKUR.webp`,
   "Wasim Jaffer": `${base}/WASIM-JAFFER.jpg`,
   "Dilip Tirkey": `${base}/DILIP-TIRKEY.jpg`,
-  "Dilip Kumar Tirkey": `${base}/Whats-App-Image-2025-08-24-at-12-53-12-AM.jpg`,
-  "Shri Dilip Kumar Tirkey": `${base}/Whats-App-Image-2025-08-24-at-12-53-12-AM.jpg`,
+  "Dilip Kumar Tirkey": `${portraits}/dilip-tirkey.jpg`,
+  "Shri Dilip Kumar Tirkey": `${portraits}/dilip-tirkey.jpg`,
   "Manikanta H Hoblidhar": `${base}/MANIKANTA-H-HOBLIDHAR.jpg`,
   "Odisha Women Football Team": `${base}/ODISHA-WOMEN-FOOTBALL-TEAM.jpg`,
   "Odisha Women's Football Team": `${base}/footballteam-1024x847.jpg`,
@@ -53,22 +54,22 @@ export const personImages: Record<string, string> = {
   "Odisha Mining Corporation": `${base}/omc-1024x842.jpg`,
   "Ardor Football Academy": `${base}/ardor-1024x847.jpg`,
   "Brahmanand Sankhwalkar": `${base}/brahamanand-1024x849.jpg`,
-  "Dr. Prabodh Mohanty": `${base}/Whats-App-Image-2025-08-24-at-12-51-36-AM.jpg`,
-  "Prabodh Mohanty": `${base}/Whats-App-Image-2025-08-24-at-12-51-36-AM.jpg`,
-  "Shri Probodh Mohanty": `${base}/Whats-App-Image-2025-08-24-at-12-51-36-AM.jpg`,
-  "Rajaraman": `${base}/Whats-App-Image-2025-08-24-at-12-45-12-AM.jpg`,
-  "U. Vimal Kumar": `${base}/Whats-App-Image-2025-08-24-at-12-49-27-AM.jpg`,
-  "Pritveen Rajan": `${base}/Whats-App-Image-2025-08-24-at-12-53-55-AM.jpg`,
-  "Dr. Sarthak Patnaik": `${base}/Whats-App-Image-2025-07-04-at-11-29-11-579ed221-2-745x1024.jpg`,
-  "Sarthak Patnaik": `${base}/Whats-App-Image-2025-07-04-at-11-29-11-579ed221-2-745x1024.jpg`,
-  "Mr. Soumya Patnaik": `${base}/1-768x1024.jpg`,
-  "Soumya Patnaik": `${base}/1-768x1024.jpg`,
-  "Dr. Nisha Kaushik": `${base}/4-768x1024.jpg`,
-  "Nisha Kaushik": `${base}/4-768x1024.jpg`,
-  "Dr. Monika Ray Patnaik": `${base}/2-768x1024.jpg`,
-  "Monika Ray Patnaik": `${base}/2-768x1024.jpg`,
-  "Leepika Patnaik": `${base}/Untitled-design-27-1024x683.jpg`,
-  "Akul Nayak": `${base}/Untitled-design-29-1024x683.jpg`,
+  "Dr. Prabodh Mohanty": `${portraits}/prabodh-mohanty.jpg`,
+  "Prabodh Mohanty": `${portraits}/prabodh-mohanty.jpg`,
+  "Shri Probodh Mohanty": `${portraits}/prabodh-mohanty.jpg`,
+  "Rajaraman": `${portraits}/rajaraman.jpg`,
+  "U. Vimal Kumar": `${portraits}/vimal-kumar.jpg`,
+  "Pritveen Rajan": `${portraits}/pritveen-rajan.jpg`,
+  "Dr. Sarthak Patnaik": `${portraits}/sarthak-patnaik.jpg`,
+  "Sarthak Patnaik": `${portraits}/sarthak-patnaik.jpg`,
+  "Mr. Soumya Patnaik": `${portraits}/soumya-patnaik.jpg`,
+  "Soumya Patnaik": `${portraits}/soumya-patnaik.jpg`,
+  "Dr. Nisha Kaushik": `${portraits}/nisha-kaushik-v2.jpg`,
+  "Nisha Kaushik": `${portraits}/nisha-kaushik-v2.jpg`,
+  "Dr. Monika Ray Patnaik": `${portraits}/monika-patnaik.jpg`,
+  "Monika Ray Patnaik": `${portraits}/monika-patnaik.jpg`,
+  "Leepika Patnaik": `${portraits}/leepika-patnaik-v2.jpg`,
+  "Akul Nayak": `${portraits}/akul-nayak-v2.jpg`,
   "Shri Kanak Vardhan Singh Deo": `${base}/IMG-2138.jpg`,
   "Kanak Vardhan Singh Deo": `${base}/IMG-2138.jpg`,
   "Shri Akash Das Nayak": `${base}/IMG-2287.jpg`,
@@ -76,6 +77,10 @@ export const personImages: Record<string, string> = {
 };
 
 export const brandLogo = `${base}/Whats-App-Image-2025-07-08-at-16-56-45-28b2319b.jpg`;
+
+export const facilityImage = `${base}/about-4-Ao-PWw2-R734sk-Q7-Nv.jpg`;
+
+export const eventHighlightImage = `${base}/6K4A0381.jpg`;
 
 export const awardTrophies: Record<string, string> = {
   "SSI Karna Award": `${base}/ssikaranaaward-1024x982.png`,

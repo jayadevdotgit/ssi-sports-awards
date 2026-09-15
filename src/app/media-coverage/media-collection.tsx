@@ -18,7 +18,7 @@ export function MediaCollection() {
       ? <p className="media-empty">No articles in this category yet.</p>
       : <div className="media-grid">
         {visible.map((article) => <article className="media-card" key={article.title}>
-          <div className="media-card-image"><Image src={article.image} alt="" width={480} height={300} sizes="(max-width: 900px) 90vw, 30vw" /></div>
+          <div className="media-card-image"><Image src={article.image} alt="" width={800} height={600} sizes="(max-width: 700px) 88vw, (max-width: 1100px) 43vw, 380px" /></div>
           <span className="source">{article.source}</span>
           <h3>{article.title}</h3>
           <p>{article.description}</p>
