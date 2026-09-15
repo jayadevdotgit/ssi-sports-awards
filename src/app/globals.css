@@ -1117,3 +1117,18 @@ main :is(.entry-card, .person-card, .hof-item, .media-card, .gallery-card, .gall
   .reference-hero .cinematic-description { line-height: 1.4; }
   .reference-hero .event-carousel-controls { padding: 4px 7px; }
 }
+
+/* Retain the original orange calls to action. */
+.reference-hero .button-champagne,
+.site-shell:has(.reference-hero) .site-header .nav-nominate {
+  background: #ff6b00;
+  color: #fff;
+  border-color: #ff6b00;
+  box-shadow: 0 5px 24px #ff6b0026;
+}
+.reference-hero .button-champagne:hover,
+.site-shell:has(.reference-hero) .site-header .nav-nominate:hover {
+  background: #ff822c;
+  border-color: #ff822c;
+  box-shadow: 0 7px 30px #ff6b0040;
+}
