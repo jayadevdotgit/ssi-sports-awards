@@ -1080,3 +1080,9 @@ main :is(.entry-card, .person-card, .hof-item, .media-card, .gallery-card, .gall
   border-color: #ff822c;
   box-shadow: 0 7px 30px #ff6b0040;
 }
+
+/* Show the exact trophy before JavaScript and GPU startup complete. */
+.trophy-first-frame { position: absolute; inset: 0; pointer-events: none; opacity: 1; transition: opacity .25s ease; }
+.trophy-first-frame img { object-fit: contain; }
+.trophy-ready .trophy-first-frame { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .trophy-first-frame { transition: none; } }
