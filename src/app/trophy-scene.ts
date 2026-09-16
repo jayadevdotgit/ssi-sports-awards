@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { trophyLogo } from "@/lib/trophy-logo";
 
 export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "low-power" });
@@ -96,22 +97,7 @@ export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
   mesh(new THREE.SphereGeometry(0.44, 32, 24), gold, 4.22);
 
   let labelTexture: THREE.Texture | undefined;
-  const labelCanvas = document.createElement("canvas");
-  labelCanvas.width = labelCanvas.height = 256;
-  const labelContext = labelCanvas.getContext("2d");
-  if (labelContext) {
-    labelContext.fillStyle = "#080808";
-    labelContext.fillRect(0, 0, 256, 256);
-    labelContext.fillStyle = "#d6a653";
-    labelContext.textAlign = "center";
-    labelContext.font = "bold 78px sans-serif";
-    labelContext.fillText("SSI", 128, 128);
-    labelContext.font = "18px sans-serif";
-    labelContext.fillText("SPORTS AWARDS", 128, 163);
-  }
-  labelTexture = new THREE.CanvasTexture(labelCanvas);
-  labelTexture.colorSpace = THREE.SRGBColorSpace;
-  const labelMaterial = new THREE.MeshBasicMaterial({ map: labelTexture, toneMapped: false });
+  const labelMaterial = new THREE.MeshBasicMaterial({ toneMapped: false });
   // Each plaque faces outward and follows the taper of its side of the base.
   for (let side = 0; side < 4; side++) {
     const face = new THREE.Group();
@@ -216,18 +202,17 @@ export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
   host.addEventListener("pointerdown", pointerDown); host.addEventListener("pointerup", resetPointer); host.addEventListener("pointercancel", resetPointer);
   renderer.domElement.addEventListener("webglcontextlost", lost);
   resize(); frame = requestAnimationFrame(render);
-  // The first frame is already rendered. A logo download must not hide the trophy.
-  const ready = Promise.resolve();
-  void new THREE.TextureLoader().loadAsync("/images/ssi-logo.jpg").then((texture) => {
-    if (disposed) { texture.dispose(); return; }
-    labelTexture?.dispose();
+  // Decode the bundled real logo before revealing the first frame; no network wait
+  // and no temporary plaque that changes after the trophy becomes visible.
+  const ready = new THREE.TextureLoader().loadAsync(trophyLogo).then((texture) => {
+    if (disposed) { texture.dispose(); throw new Error("Trophy scene disposed"); }
     labelTexture = texture;
     texture.colorSpace = THREE.SRGBColorSpace;
     texture.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
     labelMaterial.map = texture;
     labelMaterial.needsUpdate = true;
     renderer.render(scene, camera); dirty = true;
-  }).catch(() => { /* Keep the local SSI plaque if the image is unavailable. */ });
+  });
   return {
     ready,
     setPaused(value: boolean) { paused = value; dirty = true; },
