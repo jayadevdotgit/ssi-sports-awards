@@ -1090,6 +1090,9 @@ main :is(.entry-card, .person-card, .hof-item, .media-card, .gallery-card, .gall
 }
 
 /* Show the exact trophy before JavaScript and GPU startup complete. */
+.trophy-experience { container-type:size; }
+/* The preview and WebGL viewport share the source image's 609:910 framing. */
+.trophy-render-frame { position:absolute; inset:0; margin:auto; width:min(100cqw,66.923077cqh); height:min(149.425287cqw,100cqh); }
 .trophy-first-frame { position: absolute; inset: 0; pointer-events: none; opacity: 1; transition: opacity .25s ease; }
 .trophy-first-frame img { object-fit: contain; }
 .trophy-ready .trophy-first-frame { opacity: 0; }

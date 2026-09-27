@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { addKarnaSculpture } from "./karna-sculpture";
 import { trophyLogo } from "@/lib/trophy-logo";
 
 export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
@@ -15,7 +16,7 @@ export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 60);
-  camera.position.set(0, 2.8, 11.7);
+  camera.position.set(0, 2.8, 10.1);
   camera.lookAt(0, 2.6, 0);
   const pmrem = new THREE.PMREMGenerator(renderer);
   const room = new RoomEnvironment();
@@ -61,40 +62,7 @@ export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
   mesh(beveledBlock(1.68, 0.045, 1.45), dark, 0.26);
   mesh(beveledBlock(1.26, 0.085, 1.08), gold, 1.37);
 
-  // Sculptural, tapered metal ribbons wrap around an elevated gold sphere.
-  for (let ribbon = 0; ribbon < 3; ribbon++) {
-    const vertices: number[] = [];
-    const indices: number[] = [];
-    const uvs: number[] = [];
-    const segments = 96, sides = 12;
-    for (let i = 0; i <= segments; i++) {
-      const t = i / segments;
-      const angle = ribbon * Math.PI * 2 / 3 + t * Math.PI * 0.88;
-      const radius = 0.13 + Math.pow(Math.sin(t * Math.PI * 0.9), 1.65) * 0.86;
-      const width = 0.008 + (0.09 + Math.sin(t * Math.PI) * 0.30) * (1 - Math.pow(t, 8));
-      const thickness = 0.009 + Math.sin(t * Math.PI) * 0.045;
-      const y = 1.4 + t * (3.9 - ribbon * 0.16);
-      for (let j = 0; j <= sides; j++) {
-        const cross = j / sides * Math.PI * 2;
-        const across = Math.cos(cross) * width;
-        const depth = Math.sin(cross) * thickness;
-        vertices.push(Math.cos(angle) * (radius + depth) - Math.sin(angle) * across,
-          y + across * 0.3, Math.sin(angle) * (radius + depth) + Math.cos(angle) * across);
-        uvs.push(j / sides, t);
-        if (i < segments && j < sides) {
-          const a = i * (sides + 1) + j, b = a + sides + 1;
-          indices.push(a, b, a + 1, b, b + 1, a + 1);
-        }
-      }
-    }
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
-    geometry.setAttribute("uv", new THREE.Float32BufferAttribute(uvs, 2));
-    geometry.setIndex(indices);
-    geometry.computeVertexNormals();
-    mesh(geometry, gold, 0);
-  }
-  mesh(new THREE.SphereGeometry(0.44, 32, 24), gold, 4.22);
+  addKarnaSculpture(trophy, gold);
 
   let labelTexture: THREE.Texture | undefined;
   const labelMaterial = new THREE.MeshBasicMaterial({ toneMapped: false });
@@ -170,6 +138,7 @@ export function createTrophyScene(host: HTMLDivElement, onFailure: () => void) {
     const { width, height } = host.getBoundingClientRect();
     if (!width || !height) return;
     camera.aspect = width / height;
+    camera.position.z = camera.aspect < 0.75 ? 11.7 : 10.1;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
     renderer.render(scene, camera);
