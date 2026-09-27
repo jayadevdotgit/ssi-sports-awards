@@ -7,7 +7,7 @@ import { founders, services, teamsWeServe, contact } from "@/lib/site-content";
 import { brandLogo, eventHighlightImage, eventMoments, facilityImage } from "@/lib/imported-images";
 
 export const metadata: Metadata = {
-  title: "About | SSI Sports Awards",
+  title: "About | SSI Sports National Awards",
   description: "Sports Science India is one of the largest multidisciplinary sports medicine practices in Eastern India and the first Sports Medicine Centre of Odisha.",
 };
 
@@ -47,7 +47,7 @@ export default function AboutPage() {
     </section>
 
     <section className="page-section alt about-founders">
-      <SectionHeading center eyebrow="OUR ESTEEMED FOUNDERS" title="A brother duo." intro="The visionaries who built Sports Science India and the SSI Sports Awards." />
+      <SectionHeading center eyebrow="OUR ESTEEMED FOUNDERS" title="A brother duo." intro="The visionaries who built Sports Science India and the SSI Sports National Awards." />
       <div className="person-grid">{founders.map((founder) => <PersonCard key={founder.name} name={founder.name} role={founder.role} />)}</div>
     </section>
 
@@ -66,16 +66,16 @@ export default function AboutPage() {
     </section>
 
     <section className="page-section about-event">
-      <SectionHeading center eyebrow="SSI SPORTS AWARDS 2025" title="Our event highlight." intro="A moment of pride from the SSI National Sports Awards 2025, held on 6th December 2025 at Kalinga Stadium." />
+      <SectionHeading center eyebrow="SSI SPORTS NATIONAL AWARDS 2025" title="Our event highlight." intro="A moment of pride from the SSI Sports National Awards 2025, held on 6th December 2025 at Kalinga Stadium." />
       <div className="event-highlight">
         <figure className="event-highlight-media premium-frame">
           <span className="about-event-badge">2025</span>
-          <Image src={eventHighlightImage} alt="The SSI National Sports Awards 2025 celebration" width={1280} height={800} sizes="(max-width: 900px) 88vw, 52vw" />
-          <figcaption>A moment of pride from the SSI National Sports Awards 2025.</figcaption>
+          <Image src={eventHighlightImage} alt="The SSI Sports National Awards 2025 celebration" width={1280} height={800} sizes="(max-width: 900px) 88vw, 52vw" />
+          <figcaption>A moment of pride from the SSI Sports National Awards 2025.</figcaption>
         </figure>
         <div className="event-highlight-info">
           <p className="eyebrow">SPORTS SCIENCE INDIA PRESENTS</p>
-          <h3>SSI National Sports Awards</h3>
+          <h3>SSI Sports National Awards</h3>
           <p className="event-highlight-tagline">Celebrating Excellence in Indian Sports</p>
           <ul className="event-highlight-details">
             <li><strong>Date</strong><span>6th December 2025</span></li>
@@ -87,7 +87,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      <div className="event-gallery" aria-label="Moments from the SSI National Sports Awards 2025">
+      <div className="event-gallery" aria-label="Moments from the SSI Sports National Awards 2025">
         {eventMoments.slice(0, 6).map((moment) => <figure key={moment.src}>
           <Image src={moment.src} alt={moment.alt} width={320} height={320} sizes="(max-width: 560px) 44vw, (max-width: 900px) 30vw, 15vw" />
         </figure>)}

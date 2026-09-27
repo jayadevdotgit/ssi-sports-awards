@@ -5,21 +5,21 @@ import { Arrow } from "../icons";
 import { Closing } from "../site-shell";
 
 export const metadata: Metadata = {
-  title: "Awardees | SSI Sports Awards",
-  description: "Explore the athletes, coaches and institutions recognised at the SSI Sports Awards across the 2024 and 2023 editions.",
+  title: "Awardees | SSI Sports National Awards",
+  description: "Explore the athletes, coaches and institutions recognised at the SSI Sports National Awards across the 2024 and 2023 editions.",
 };
 
 const editions = [
   {
     year: "2024",
     href: "/awardee-2024",
-    title: "SSI Sports Awards 2024",
+    title: "SSI Sports National Awards 2024",
     summary: "Champions, coaches and institutions who redefined Indian sport with passion, perseverance and performance.",
   },
   {
     year: "2023",
     href: "/awardee-2023",
-    title: "SSI Sports Awards 2023",
+    title: "SSI Sports National Awards 2023",
     summary: "The edition that put sports science, grassroots development and India's finest athletes centre stage.",
   },
 ];
@@ -29,7 +29,7 @@ export default function AwardeesPage() {
     <PageHero
       eyebrow="THE CELEBRATION"
       title={<>Our <span>awardees.</span></>}
-      lead="Every year the SSI Sports Awards honours the athletes, coaches and institutions who inspire us to dream bigger, run faster and aim higher. Explore the editions below."
+      lead="Every year the SSI Sports National Awards honours the athletes, coaches and institutions who inspire us to dream bigger, run faster and aim higher. Explore the editions below."
     />
     <section className="page-section">
       <div className="entry-grid">

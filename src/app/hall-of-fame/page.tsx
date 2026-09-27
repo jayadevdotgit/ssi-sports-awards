@@ -6,7 +6,7 @@ import { hallOfFame } from "@/lib/site-content";
 import { personImages } from "@/lib/imported-images";
 
 export const metadata: Metadata = {
-  title: "Hall of Fame | SSI Sports Awards",
+  title: "Hall of Fame | SSI Sports National Awards",
   description: "Honoring the legends, champions, and trailblazers who have forged an everlasting legacy in the world of sport.",
 };
 

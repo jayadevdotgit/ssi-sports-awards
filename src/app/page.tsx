@@ -17,14 +17,14 @@ export default function Home() {
       <div className="cinematic-atmosphere" aria-hidden="true" />
       <div className="cinematic-copy">
         <div className="hero-head">
-          <div className="hero-logos" aria-label="Presented by SSI Foundation, Sports Science India and SSI Sports Awards">
+          <div className="hero-logos" aria-label="Presented by SSI Foundation, Sports Science India and SSI Sports National Awards">
             <div className="hero-logo"><span className="hero-logo-frame"><Image src="/images/imported/LOGO.jpg" alt="SSI Foundation" width={56} height={56} /></span><span className="hero-logo-label">SSI Sports</span></div>
             <div className="hero-logo"><span className="hero-logo-frame"><Image src="/images/imported/Whats-App-Image-2025-07-08-at-16-56-45-28b2319b.jpg" alt="Sports Science India" width={56} height={56} /></span><span className="hero-logo-label">Science India</span></div>
-            <div className="hero-logo"><span className="hero-logo-frame"><Image src="/images/imported/Whats-App-Image-2025-07-26-at-16-10-38-cda9fa21.jpg" alt="SSI Sports Awards 2025" width={56} height={56} /></span><span className="hero-logo-label">Awards 2025</span></div>
+            <div className="hero-logo"><span className="hero-logo-frame"><Image src="/images/imported/Whats-App-Image-2025-07-26-at-16-10-38-cda9fa21.jpg" alt="SSI Sports National Awards 2025" width={56} height={56} /></span><span className="hero-logo-label">Awards 2025</span></div>
           </div>
           <h1 id="hero-title">Every champion<span>has a journey.</span></h1>
         </div>
-        <p className="cinematic-lead">SSI SPORTS AWARDS</p>
+        <p className="cinematic-lead">SSI SPORTS NATIONAL AWARDS</p>
         <p className="cinematic-description">Celebrating athletes, changemakers<br />and the spirit of a stronger India.</p>
         <p className="hero-event"><span>6 December 2025</span><i aria-hidden="true" /><span>Kalinga Stadium, Bhubaneswar</span></p>
         <div className="hero-actions"><a className="button button-champagne" href="#awards">Explore the awards <Arrow /></a><Link className="button button-outline" href="/nomination-form">Nominate an athlete</Link></div>
@@ -40,8 +40,8 @@ export default function Home() {
 
     <section className="about" id="about" aria-labelledby="about-title">
       <p className="side-note about-side">LEADERSHIP<br />FUELS<br />POSSIBILITIES.<span /></p>
-      <div className="photo-button speaker-photo"><Image src="/images/imported/6K4A0447.jpg" alt="The Chief Guest welcomed on stage at the SSI Sports Awards 2025" width={640} height={520} sizes="(max-width: 700px) 88vw, 32vw" /></div>
-      <div className="about-copy"><p className="eyebrow">VISION FOR A STRONGER TOMORROW</p><h2 id="about-title">Celebrating sport.<br />Inspiring India.</h2><p>The SSI Sports Awards honour exceptional athletes, dedicated coaches, institutions and changemakers who are shaping a healthier, stronger and more united India through sport.</p><blockquote className="about-quote">We honour more than medals — we honour the people, the purpose and the progress behind every achievement.</blockquote><p>From athletics, hockey and swimming to gymnastics, shooting and weightlifting, the awards shine a light on the dedication behind each triumph and on the grassroots work that nurtures India&apos;s next generation of champions.</p><AboutButton /></div>
+      <div className="photo-button speaker-photo"><Image src="/images/imported/6K4A0447.jpg" alt="The Chief Guest welcomed on stage at the SSI Sports National Awards 2025" width={640} height={520} sizes="(max-width: 700px) 88vw, 32vw" /></div>
+      <div className="about-copy"><p className="eyebrow">VISION FOR A STRONGER TOMORROW</p><h2 id="about-title">Celebrating sport.<br />Inspiring India.</h2><p>The SSI Sports National Awards honour exceptional athletes, dedicated coaches, institutions and changemakers who are shaping a healthier, stronger and more united India through sport.</p><blockquote className="about-quote">We honour more than medals — we honour the people, the purpose and the progress behind every achievement.</blockquote><p>From athletics, hockey and swimming to gymnastics, shooting and weightlifting, the awards shine a light on the dedication behind each triumph and on the grassroots work that nurtures India&apos;s next generation of champions.</p><AboutButton /></div>
       <div className="impact" aria-label="The possibilities that sport creates">{[
         { icon: "opportunities", first: "MORE", second: "OPPORTUNITIES" },
         { icon: "communities", first: "STRONGER", second: "COMMUNITIES" },
@@ -51,13 +51,13 @@ export default function Home() {
     </section>
 
     <section className="page-section home-awards" id="awards" aria-labelledby="awards-title">
-      <SectionHeading center eyebrow="SSI SPORTS AWARDS" title={<span id="awards-title">Excellence honoured.</span>} intro="Celebrating outstanding achievements in sports and honouring distinguished personalities across every dimension of Indian sport." />
+      <SectionHeading center eyebrow="SSI SPORTS NATIONAL AWARDS" title={<span id="awards-title">Excellence honoured.</span>} intro="Celebrating outstanding achievements in sports and honouring distinguished personalities across every dimension of Indian sport." />
       <AwardCarousel />
       <p className="page-note">As outlined by Dr. Sarthak Patnaik.</p>
     </section>
 
     <section className="page-section alt home-guests" id="guests" aria-labelledby="guests-title">
-      <SectionHeading center eyebrow="SSI SPORTS AWARDS 2025" title={<span id="guests-title">Our distinguished guests.</span>} intro="Honouring exceptional individuals who joined us to celebrate excellence in Indian sport." />
+      <SectionHeading center eyebrow="SSI SPORTS NATIONAL AWARDS 2025" title={<span id="guests-title">Our distinguished guests.</span>} intro="Honouring exceptional individuals who joined us to celebrate excellence in Indian sport." />
       <div className="guest-grid">
         {distinguishedGuests.map((guest) => <article className="guest-card" key={guest.name}>
           {personImages[guest.name] && <div className="guest-card-photo"><Image src={personImages[guest.name]} alt={guest.name} width={480} height={480} sizes="(max-width: 700px) 76px, 240px" /></div>}

@@ -5,9 +5,9 @@ import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { eventMoments } from "@/lib/imported-images";
 
 export const celebrationPhotos = [
-  { src: "/images/hero-ceremony.jpg", alt: "An athlete and guest celebrating at the SSI Sports Awards" },
-  { src: "/images/award-group.jpg", alt: "Awardees and guests together at the SSI Sports Awards conclave" },
-  { src: "/images/speaker.jpg", alt: "A speaker addressing the SSI Sports Awards conclave" },
+  { src: "/images/hero-ceremony.jpg", alt: "An athlete and guest celebrating at the SSI Sports National Awards" },
+  { src: "/images/award-group.jpg", alt: "Awardees and guests together at the SSI Sports National Awards conclave" },
+  { src: "/images/speaker.jpg", alt: "A speaker addressing the SSI Sports National Awards conclave" },
   ...eventMoments,
 ];
 
@@ -80,7 +80,7 @@ export function EventCarousel() {
         <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 700px) 100vw, 60vw" loading={position === 0 || position === 1 ? "eager" : "lazy"} onLoad={() => loaded.current.add(index)} />
       </div>;
       })}
-      <span className="event-photo-tag">SSI SPORTS AWARDS · THE CELEBRATION</span>
+      <span className="event-photo-tag">SSI SPORTS NATIONAL AWARDS · THE CELEBRATION</span>
     </div>
     <div className="event-carousel-controls">
       <div className="event-slide-count" aria-live={stopped ? "polite" : "off"}><strong>{String(active + 1).padStart(2, "0")}</strong><span>/ {String(celebrationPhotos.length).padStart(2, "0")}</span></div>

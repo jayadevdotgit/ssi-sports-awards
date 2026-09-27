@@ -64,8 +64,8 @@ export function PersonCard({ name, role, bio }: { name: string; role: string; bi
 export function AwardeeEditionContent({ edition, containImages = false }: { edition: AwardeeEdition; containImages?: boolean }) {
   return <>
     <PageHero
-      eyebrow={`SSI SPORTS AWARDS · ${edition.year}`}
-      title={`SSI Sports Awards ${edition.year}`}
+      eyebrow={`SSI SPORTS NATIONAL AWARDS · ${edition.year}`}
+      title={`SSI Sports National Awards ${edition.year}`}
       lead={edition.intro}
       backHref="/awardees"
       backLabel="All awardees"
@@ -76,7 +76,7 @@ export function AwardeeEditionContent({ edition, containImages = false }: { edit
     </section>)}
     <section className="page-section alt">
       <blockquote className="quote-block"><p>{edition.quote}</p></blockquote>
-      <p className="page-note">© {edition.year} SSI Sports Awards. All rights reserved.</p>
+      <p className="page-note">© {edition.year} SSI Sports National Awards. All rights reserved.</p>
     </section>
   </>;
 }

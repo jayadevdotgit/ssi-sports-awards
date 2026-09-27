@@ -6,8 +6,8 @@ import { Closing } from "../site-shell";
 import { premiumSponsor, sponsors } from "@/lib/sponsors";
 
 export const metadata: Metadata = {
-  title: "Presenting Sponsor | SSI Sports Awards",
-  description: "We extend our heartfelt gratitude to the sponsors who make the SSI Sports Awards possible.",
+  title: "Presenting Sponsor | SSI Sports National Awards",
+  description: "We extend our heartfelt gratitude to the sponsors who make the SSI Sports National Awards possible.",
 };
 
 export default function PresentingSponsorPage() {
@@ -15,12 +15,12 @@ export default function PresentingSponsorPage() {
     <PageHero
       eyebrow="WITH GRATITUDE"
       title={<>Our <span>sponsors.</span></>}
-      lead="We extend our heartfelt gratitude to our incredible sponsors who make the SSI Sports Awards possible. Their commitment to excellence in sports and unwavering support helps us honor the achievements of athletes and teams who inspire us all."
+      lead="We extend our heartfelt gratitude to our incredible sponsors who make the SSI Sports National Awards possible. Their commitment to excellence in sports and unwavering support helps us honor the achievements of athletes and teams who inspire us all."
       actions={<a className="button button-orange" href="mailto:info@ssisportsawards.com">Become a sponsor <Arrow /></a>}
     />
 
     <section className="page-section">
-      <SectionHeading center eyebrow="PREMIUM PARTNER" title="Our premium partner." intro="A special thank you to the partner whose support anchors the SSI Sports Awards." />
+      <SectionHeading center eyebrow="PREMIUM PARTNER" title="Our premium partner." intro="A special thank you to the partner whose support anchors the SSI Sports National Awards." />
       <figure className="premium-sponsor">
         <Image src={premiumSponsor.src} alt={premiumSponsor.alt} width={320} height={320} sizes="(max-width: 700px) 70vw, 320px" />
       </figure>

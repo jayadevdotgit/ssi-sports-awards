@@ -39,11 +39,11 @@ export function validateDraft(draft: NominationDraft): Partial<Record<keyof Nomi
 
 export function formatDraft(draft: NominationDraft): string {
   return [
-    "SSI SPORTS AWARDS", "ATHLETE NOMINATION — DRAFT", "",
+    "SSI SPORTS NATIONAL AWARDS", "ATHLETE NOMINATION — DRAFT", "",
     `Athlete: ${draft.athlete.trim()}`, `Sport: ${draft.sport.trim()}`,
     `City / State: ${draft.location.trim() || "Not provided"}`, "",
     `Nominated by: ${draft.name.trim()}`, `Contact email: ${draft.email.trim()}`,
     "", "STORY & ACHIEVEMENTS", draft.achievements.trim(), "",
-    "This is a personal nomination draft. It has not been submitted to SSI Sports Awards.",
+    "This is a personal nomination draft. It has not been submitted to SSI Sports National Awards.",
   ].join("\n");
 }

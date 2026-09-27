@@ -159,7 +159,7 @@ export const awardees2024: AwardeeEdition = {
     },
   ],
   quote:
-    "At the SSI Sports Awards 2024, we celebrate the heroes behind the headlines — the athletes, coaches, and institutions who inspire us to dream bigger, run faster, and aim higher.",
+    "At the SSI Sports National Awards 2024, we celebrate the heroes behind the headlines — the athletes, coaches, and institutions who inspire us to dream bigger, run faster, and aim higher.",
 };
 
 export const awardees2023: AwardeeEdition = {
@@ -258,7 +258,7 @@ export const awardees2023: AwardeeEdition = {
     },
   ],
   quote:
-    "At the SSI Sports Awards 2023, we celebrate the heroes behind the headlines — the athletes, coaches, and institutions who inspire us to dream bigger, run faster, and aim higher.",
+    "At the SSI Sports National Awards 2023, we celebrate the heroes behind the headlines — the athletes, coaches, and institutions who inspire us to dream bigger, run faster, and aim higher.",
 };
 
 export const teamsWeServe = [
@@ -395,8 +395,8 @@ export const mediaArticles: MediaArticle[] = [
 
 export const mediaVideos = [
   {
-    title: "SSI Sports Awards 2023 Highlights",
-    description: "Watch the highlights from the prestigious SSI Sports Awards ceremony held at Kalinga Stadium.",
+    title: "SSI Sports National Awards 2023 Highlights",
+    description: "Watch the highlights from the prestigious SSI Sports National Awards ceremony held at Kalinga Stadium.",
     date: "December 16, 2023",
     id: "GNDeyv2lx-Q",
     youtube: "https://youtu.be/GNDeyv2lx-Q",
@@ -412,7 +412,7 @@ export const mediaVideos = [
   },
   {
     title: "Award Winners Interviews",
-    description: "Exclusive interviews with the winners of SSI Sports Awards 2023 and their achievements.",
+    description: "Exclusive interviews with the winners of SSI Sports National Awards 2023 and their achievements.",
     date: "December 18, 2023",
     id: "i9taTmKbxXQ",
     youtube: "https://youtu.be/i9taTmKbxXQ",
@@ -420,7 +420,7 @@ export const mediaVideos = [
   },
   {
     title: "Behind the Scenes: SSI Awards",
-    description: "Go behind the scenes of the SSI Sports Awards 2023 and see how the event was organized.",
+    description: "Go behind the scenes of the SSI Sports National Awards 2023 and see how the event was organized.",
     date: "December 19, 2023",
     id: "q_Q1n9WLNoY",
     youtube: "https://youtu.be/q_Q1n9WLNoY",

@@ -13,7 +13,7 @@ export function MediaCollection() {
     <div className="gallery-filters" role="group" aria-label="Filter media coverage">
       {filters.map((item) => <button aria-pressed={filter === item} key={item} onClick={() => setFilter(item)}>{item}</button>)}
     </div>
-    <p className="gallery-count" aria-live="polite">{visible.length} {visible.length === 1 ? "article" : "articles"} about the SSI Sports Awards</p>
+    <p className="gallery-count" aria-live="polite">{visible.length} {visible.length === 1 ? "article" : "articles"} about the SSI Sports National Awards</p>
     {visible.length === 0
       ? <p className="media-empty">No articles in this category yet.</p>
       : <div className="media-grid">

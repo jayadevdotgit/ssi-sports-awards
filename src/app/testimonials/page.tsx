@@ -4,20 +4,20 @@ import { Closing } from "../site-shell";
 import { distinguishedGuests, guestMessages, awardeeVoices } from "@/lib/site-content";
 
 export const metadata: Metadata = {
-  title: "Testimonials | SSI Sports Awards",
-  description: "Messages and reflections from the distinguished guests and awardees of the SSI Sports Awards 2025.",
+  title: "Testimonials | SSI Sports National Awards",
+  description: "Messages and reflections from the distinguished guests and awardees of the SSI Sports National Awards 2025.",
 };
 
 export default function TestimonialsPage() {
   return <main id="main" className="inner-page">
     <PageHero
-      eyebrow="SSI SPORTS AWARDS 2025"
+      eyebrow="SSI SPORTS NATIONAL AWARDS 2025"
       title={<>Our distinguished<br /><span>guests.</span></>}
-      lead="Celebrating excellence in sports with the leaders, legends and awardees who joined us for the SSI Sports Awards 2025."
+      lead="Celebrating excellence in sports with the leaders, legends and awardees who joined us for the SSI Sports National Awards 2025."
     />
 
     <section className="page-section">
-      <SectionHeading eyebrow="OUR DISTINGUISHED GUESTS" title="The people who joined us." intro="The leaders, legends and changemakers who graced the SSI Sports Awards 2025." />
+      <SectionHeading eyebrow="OUR DISTINGUISHED GUESTS" title="The people who joined us." intro="The leaders, legends and changemakers who graced the SSI Sports National Awards 2025." />
       <div className="person-grid">
         {distinguishedGuests.map((guest) => <PersonCard key={guest.name} name={guest.name} role={guest.role} bio={guest.detail} />)}
       </div>

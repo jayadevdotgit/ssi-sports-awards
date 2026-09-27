@@ -91,16 +91,16 @@ export const awardTrophies: Record<string, string> = {
 };
 
 export const eventMoments = [
-  { src: `${base}/img_2107-m7VDV4nzBQU7PNZO.JPG`, alt: "Guests and awardees at the SSI Sports Awards ceremony" },
-  { src: `${base}/img_2133-mp848ExLyOtPk9bX.JPG`, alt: "A moment from the SSI Sports Awards stage" },
-  { src: `${base}/img_2157-mxB2BnD501sVoErK.JPG`, alt: "Award presentation at the SSI Sports Awards" },
-  { src: `${base}/img_2171-mxB2BnLkjEID6qgl.JPG`, alt: "The SSI Sports Awards ceremony in progress" },
-  { src: `${base}/img_2255-dJoPokM7KyC0q4P2.JPG`, alt: "Attendees at the SSI Sports Awards conclave" },
+  { src: `${base}/img_2107-m7VDV4nzBQU7PNZO.JPG`, alt: "Guests and awardees at the SSI Sports National Awards ceremony" },
+  { src: `${base}/img_2133-mp848ExLyOtPk9bX.JPG`, alt: "A moment from the SSI Sports National Awards stage" },
+  { src: `${base}/img_2157-mxB2BnD501sVoErK.JPG`, alt: "Award presentation at the SSI Sports National Awards" },
+  { src: `${base}/img_2171-mxB2BnLkjEID6qgl.JPG`, alt: "The SSI Sports National Awards ceremony in progress" },
+  { src: `${base}/img_2255-dJoPokM7KyC0q4P2.JPG`, alt: "Attendees at the SSI Sports National Awards conclave" },
   { src: `${base}/img_2298-mv0P06Oen8Cvn680.JPG`, alt: "A celebratory moment from the awards evening" },
-  { src: `${base}/IMG-2138.jpg`, alt: "Guests at the SSI Sports Awards" },
-  { src: `${base}/IMG-2178.jpg`, alt: "The SSI Sports Awards audience" },
-  { src: `${base}/IMG-2192.jpg`, alt: "Award recipients at the SSI Sports Awards" },
-  { src: `${base}/IMG-2269.jpg`, alt: "The SSI Sports Awards celebration" },
-  { src: `${base}/6K4A0381.jpg`, alt: "Highlights from the SSI Sports Awards" },
-  { src: `${base}/6K4A0555.jpg`, alt: "The SSI Sports Awards on stage" },
+  { src: `${base}/IMG-2138.jpg`, alt: "Guests at the SSI Sports National Awards" },
+  { src: `${base}/IMG-2178.jpg`, alt: "The SSI Sports National Awards audience" },
+  { src: `${base}/IMG-2192.jpg`, alt: "Award recipients at the SSI Sports National Awards" },
+  { src: `${base}/IMG-2269.jpg`, alt: "The SSI Sports National Awards celebration" },
+  { src: `${base}/6K4A0381.jpg`, alt: "Highlights from the SSI Sports National Awards" },
+  { src: `${base}/6K4A0555.jpg`, alt: "The SSI Sports National Awards on stage" },
 ];

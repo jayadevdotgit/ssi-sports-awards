@@ -101,7 +101,7 @@ export function AwardCarousel() {
       className={`award-carousel-track${dragging ? " is-dragging" : ""}`}
       ref={track}
       tabIndex={0}
-      aria-label="SSI Sports Awards categories"
+      aria-label="SSI Sports National Awards categories"
       aria-roledescription="carousel"
       onKeyDown={(event) => {
         if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
