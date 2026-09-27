@@ -29,8 +29,10 @@ export function TrophyHero() {
   }, []);
 
   return <div className={`trophy-experience trophy-${status}`}>
+    <div className="trophy-render-frame">
     <div className="trophy-first-frame" aria-hidden="true"><Image src="/images/trophy-first-frame.png" alt="" fill preload unoptimized sizes="(max-width: 700px) 45vw, 30vw" /></div>
     <div ref={host} className="trophy-canvas" tabIndex={status === "ready" ? 0 : -1} role="img" aria-label="Interactive three-dimensional gold trophy. Move your pointer or use left and right arrow keys to rotate." />
+    </div>
     {status === "ready" && <div className="trophy-controls"><span><i aria-hidden="true" />EXPLORE IN 3D</span><button aria-pressed={paused} onClick={() => { const next = !paused; setPaused(next); scene.current?.setPaused(next); }}>{paused ? "Play rotation" : "Pause rotation"}<span aria-hidden="true">{paused ? " ▷" : " Ⅱ"}</span></button></div>}
   </div>;
 }

@@ -4,7 +4,7 @@ import { useMemo, useState, type FormEvent, type ReactNode } from "react";
 import { awardCategories } from "@/lib/site-content";
 import { Arrow } from "../icons";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xoeqedzz";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mgavppwn";
 const KARNA = "SSI Karna Award";
 
 type FieldKey =

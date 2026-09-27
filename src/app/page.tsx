@@ -5,6 +5,7 @@ import { SectionHeading } from "./inner";
 import { Arrow } from "./icons";
 import { Closing } from "./site-shell";
 import { EventCarousel } from "./event-carousel";
+import { EventCountdown } from "./event-countdown";
 import { TrophyHero } from "./trophy-hero";
 import { AwardCarousel } from "./award-carousel";
 import { SponsorMarquee } from "./sponsor-marquee";
@@ -50,8 +51,9 @@ export default function Home() {
             <p className="national-event-quote">It’s time to recognize<br />and applaud excellence.</p>
             <div className="national-event-action"><Link className="button button-orange" href="/nomination-form">Nominate now <Arrow /></Link><span>Where hard work<br />meets the spotlight.</span></div>
           </div>
-          <figure className="national-event-award"><Image src="/images/imported/ssikaranaaward-1024x982.png" alt="The golden SSI Karna Award trophy" width={1024} height={982} sizes="(max-width: 700px) 80vw, 420px" /><figcaption><span>THE SPIRIT OF EXCELLENCE</span>SSI Karna Award</figcaption></figure>
+          <figure className="national-event-award"><Image src="/images/karna-award-approved.png" alt="Gold SSI Karna Award archer sculpture on a black pedestal" width={916} height={1717} sizes="(max-width: 700px) 84px, 180px" style={{ maxHeight: "280px", width: "auto", maxWidth: "100%", marginInline: "auto", objectFit: "contain" }} /><figcaption><span>THE SPIRIT OF EXCELLENCE</span>SSI Karna Award</figcaption></figure>
         </div>
+        <EventCountdown />
         <dl className="national-event-details">
           <div><dt>THE DATE</dt><dd><time dateTime="2026-12-05">5 December 2026</time><span>Saturday</span></dd></div>
           <div><dt>THE TIME</dt><dd><time dateTime="16:00">4:00 PM</time><span>An evening of celebration</span></dd></div>
