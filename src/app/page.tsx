@@ -26,7 +26,7 @@ export default function Home() {
         </div>
         <p className="cinematic-lead">SSI SPORTS NATIONAL AWARDS</p>
         <p className="cinematic-description">Celebrating athletes, changemakers<br />and the spirit of a stronger India.</p>
-        <p className="hero-event"><span>6 December 2025</span><i aria-hidden="true" /><span>Kalinga Stadium, Bhubaneswar</span></p>
+        <p className="hero-event"><span>5 December 2026 · 4:00 PM</span><i aria-hidden="true" /><span>Kalinga Stadium, Bhubaneswar</span></p>
         <div className="hero-actions"><a className="button button-champagne" href="#awards">Explore the awards <Arrow /></a><Link className="button button-outline" href="/nomination-form">Nominate an athlete</Link></div>
         <p className="reference-values">PEOPLE <span>|</span> PURPOSE <span>|</span> PROGRESS</p>
       </div>
@@ -36,6 +36,30 @@ export default function Home() {
       </div>
       <p className="reference-side-note">SPORTS<br />BUILDS A<br />BRIGHTER<br />INDIA<span /></p><p className="reference-script">More<br />Than<br />A Game</p>
       <div className="cinematic-footer"><p className="reference-bottom-note">INDIAN SPORTS.<br />BRIGHTER TOMORROWS.</p></div>
+    </section>
+
+    <section className="national-callout" aria-labelledby="national-event-title">
+      <div className="national-event-frame">
+        <header className="national-event-heading"><span>SPORTS SCIENCE INDIA PRESENTS</span><span>THE 2026 CELEBRATION</span></header>
+        <div className="national-event-main">
+          <div className="national-event-copy">
+            <p className="national-event-kicker">DEDICATION. ACHIEVEMENT. EXCELLENCE.</p>
+            <h2 id="national-event-title">SSI National<span>Sports Awards <em>2026</em></span></h2>
+            <div className="national-event-rule" aria-hidden="true">✦</div>
+            <p className="national-event-invitation">Join us for an evening of celebration and acknowledge the dedication and hard work of exceptional athletes. Nominate your favourite sports star for the SSI Awards.</p>
+            <p className="national-event-quote">It’s time to recognize<br />and applaud excellence.</p>
+            <div className="national-event-action"><Link className="button button-orange" href="/nomination-form">Nominate now <Arrow /></Link><span>Where hard work<br />meets the spotlight.</span></div>
+          </div>
+          <figure className="national-event-award"><Image src="/images/imported/ssikaranaaward-1024x982.png" alt="The golden SSI Karna Award trophy" width={1024} height={982} sizes="(max-width: 700px) 80vw, 420px" /><figcaption><span>THE SPIRIT OF EXCELLENCE</span>SSI Karna Award</figcaption></figure>
+        </div>
+        <dl className="national-event-details">
+          <div><dt>THE DATE</dt><dd><time dateTime="2026-12-05">5 December 2026</time><span>Saturday</span></dd></div>
+          <div><dt>THE TIME</dt><dd><time dateTime="16:00">4:00 PM</time><span>An evening of celebration</span></dd></div>
+          <div><dt>THE VENUE</dt><dd>Kalinga Stadium<span>Bhubaneswar</span></dd></div>
+        </dl>
+        <p className="national-event-honour"><span aria-hidden="true">✦</span> Honouring National Achievements <span aria-hidden="true">✦</span></p>
+        <footer className="national-event-contact"><a href="tel:+917978559036"><span>REACH US AT</span> +91 79785 59036</a></footer>
+      </div>
     </section>
 
     <section className="about" id="about" aria-labelledby="about-title">
