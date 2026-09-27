@@ -20,7 +20,7 @@ export default function Home() {
           <div className="hero-logos" aria-label="Presented by SSI Foundation, Sports Science India and SSI Sports National Awards">
             <div className="hero-logo"><span className="hero-logo-frame"><Image src="/images/imported/LOGO.jpg" alt="SSI Foundation" width={56} height={56} /></span><span className="hero-logo-label">SSI Sports</span></div>
             <div className="hero-logo"><span className="hero-logo-frame"><Image src="/images/imported/Whats-App-Image-2025-07-08-at-16-56-45-28b2319b.jpg" alt="Sports Science India" width={56} height={56} /></span><span className="hero-logo-label">Science India</span></div>
-            <div className="hero-logo"><span className="hero-logo-frame"><Image src="/images/imported/Whats-App-Image-2025-07-26-at-16-10-38-cda9fa21.jpg" alt="SSI Sports National Awards 2025" width={56} height={56} /></span><span className="hero-logo-label">Awards 2025</span></div>
+            <div className="hero-logo"><span className="hero-logo-frame"><span className="hero-awards-emblem"><Image src="/images/ssi-logo.png" alt="SSI Sports National Awards" width={56} height={56} /></span></span><span className="hero-logo-label">National Awards</span></div>
           </div>
           <h1 id="hero-title">Every champion<span>has a journey.</span></h1>
         </div>

@@ -8,11 +8,11 @@ const display = localFont({ src: "../../public/fonts/BebasNeue-Regular.ttf", var
 const body = localFont({ src: "../../public/fonts/Manrope-Variable.ttf", variable: "--font-body", display: "swap", weight: "200 800" });
 
 export const metadata: Metadata = {
-  title: "SSI Sports National Awards 2025 | Every Champion Has a Journey",
-  description: "Celebrating athletes, changemakers and the spirit of a stronger India. Explore moments from the SSI Sports National Awards 2025.",
+  title: "SSI Sports National Awards | Every Champion Has a Journey",
+  description: "Celebrating athletes, changemakers and the spirit of a stronger India. Explore moments from the SSI Sports National Awards.",
   applicationName: "SSI Sports National Awards",
   icons: { icon: "/icon.svg", apple: "/images/ssi-logo.jpg" },
-  openGraph: { title: "SSI Sports National Awards 2025", description: "Every champion has a journey. Celebrating excellence in Indian sport.", type: "website" },
+  openGraph: { title: "SSI Sports National Awards", description: "Every champion has a journey. Celebrating excellence in Indian sport.", type: "website" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

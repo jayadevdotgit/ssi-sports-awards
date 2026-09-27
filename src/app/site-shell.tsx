@@ -7,7 +7,7 @@ import logo from "../../public/images/ssi-logo.png";
 export function Header() {
   return <header className="site-header">
     <Link className="brand" href="/" aria-label="SSI Sports National Awards home">
-      <Image className="brand-logo" src={logo} alt="SSI Sports National Awards 2025" priority />
+      <span className="brand-emblem"><Image className="brand-logo" src={logo} alt="SSI Sports National Awards" priority /></span>
       <span className="brand-name">SSI Sports<strong>National Awards</strong></span>
     </Link>
     <Navigation />
@@ -50,7 +50,7 @@ const footerLinks = [
 
 export function Footer() {
   return <footer className="site-footer">
-    <div className="footer-top"><Link href="/">SSI SPORTS NATIONAL AWARDS 2025</Link><span className="footer-rule" /><p>CELEBRATING EXCELLENCE IN INDIAN SPORTS</p><p className="footer-values">PEOPLE <i /> SPORT <i /> A STRONGER INDIA</p></div>
+    <div className="footer-top"><Link href="/">SSI SPORTS NATIONAL AWARDS</Link><span className="footer-rule" /><p>CELEBRATING EXCELLENCE IN INDIAN SPORTS</p><p className="footer-values">PEOPLE <i /> SPORT <i /> A STRONGER INDIA</p></div>
     <nav className="footer-links" aria-label="Footer navigation">{footerLinks.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}</nav>
     <div className="footer-bottom"><p>A celebration of the people who move Indian sport forward.</p><div><Link href="/gallery">Event gallery</Link><a href="#top">Back to top <Arrow direction="up" /></a></div></div>
     <p className="footer-credit">Designed by <a href="mailto:jayadevpradhan9@gmail.com">Jayadev</a></p>
